@@ -1,0 +1,19 @@
+const Validator =  require('./Validator.js');
+
+class EmailValidator extends Validator{
+
+  isEmail(email){
+
+    if(!email)
+      return false;
+
+    let emailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailRegExp.test(email))
+      return true;
+
+    return false;
+
+  }
+}
+
+module.exports = Validator;
